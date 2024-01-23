@@ -1,0 +1,46 @@
+-------------------------------------
+# Befehle in der virtuellen umgebung 
+(dev) powershell
+
+#Virtuelle Python Umgebung starten
+python -m venv [name]
+.\dev\Scripts\activate.ps1
+pip install django
+
+# Module und Packete in requirements.txt speichern mit pip freeze
+pip freeze > requirements.txt
+
+#Python Projekt erstellen und starten
+django-admin startproject beachvolleyball
+
+#Python webapp erstellen und startten 
+cd .\beachvolleyball\
+django-admin startapp beachvolleyball_webapp
+python manage.py runserver
+
+# PostgreSQL Package installieren in Virtueller Umgebung
+pip install psycopg2-binary
+pip freeze > requirements.txt
+
+# Erstelltes Datenbank Modell von models.py in PostgreSQL migrieren
+python manage.py makemigrations
+python manage.py migrate
+
+#Datenbankmigration bei Änderungen in der Datenbank von Python in die PostgreSQL schreiben
+python manage.py makemigrations
+python manage.py sqlmigrate beachvolleyball_webapp [inital]
+python manage.py migrate
+
+#FÜR DOCKER COMPOSE DANN
+python manage.py makemigrations
+python manage.py sqlmigrate beachvolleyball_webapp 0002
+python manage.py migrate
+
+
+--------------------------------------
+#Befehle normale powershell
+# Docker Image für PostgreSQL-Datenbank mit DOCKERFILE erstellen (DOCKERFILE holt sich ein Basis Image von PostgreSQL von docker.io)
+# Baue das Docker-PostgreSQL Image 
+docker build -t beachvolleyball
+#Starte die PostgreSQL-Datenbank in einem Container
+docker run -d --name beachvolleyball -p 5432:5432 beachvolleyball
