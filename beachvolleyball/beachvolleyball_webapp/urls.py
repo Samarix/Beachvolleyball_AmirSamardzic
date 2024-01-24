@@ -1,11 +1,14 @@
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
 
 from . import views
 
 urlpatterns = [
- path ('', views.index, name = 'index'),
- #/teams > views > teams > teams.html
+ path ('', views.home, name = 'home'),
+ path ('events/', views.events, name = 'events'),
+ path ('beachtournaments/', views.beachtournaments, name = 'beachtournaments'),
+
+
 ]
 
 #-------------------------------------------------------------------------------------------------------------------------

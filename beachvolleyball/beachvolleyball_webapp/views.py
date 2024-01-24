@@ -2,8 +2,6 @@ from django.shortcuts import render
 from .models import Event, BeachTournament
 
 
-
-
 # Create your views here.
 
 def home(request):

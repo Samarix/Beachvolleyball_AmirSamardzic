@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+{%block title%} Events{% endblock %}
+
+{% block content %}
+
+<h1>Events</h1>
+
+
+<table class="table">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col">Code</th>
+            <th scope="col">Name</th>
+            <th scope="col">StartDate</th>
+            <th scope="col">EndDate</th>
+            <th scope="col">no</th>
+            <th scope="col">Version</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for event in events %}
+        <tr>
+            <td>{{event.Code}}</td>
+            <td>{{event.Name}}</td>
+            <td>{{event.StartDate}}</td>
+            <td>{{event.EndDate}}</td>
+            <td>{{event.no}}</td>
+            <td>{{event.Version}}</td>
+        {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}
