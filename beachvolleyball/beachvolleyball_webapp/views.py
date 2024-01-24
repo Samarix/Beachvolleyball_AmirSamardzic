@@ -22,7 +22,7 @@ def events(request):
 
 def beachtournaments(request):
 
-    beachtournaments = BeachTournament.objects
+    beachtournaments = BeachTournament.objects.filter(StartDateMainDraw__range=["2020-01-01", "2024-12-31"]).order_by('-StartDateMainDraw')
 
     context = {
         'beachtournaments': beachtournaments,

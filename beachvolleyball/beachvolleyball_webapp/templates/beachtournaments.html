@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
 
-{%block title%} Events{% endblock %}
+{%block title%} Beach Tournaments{% endblock %}
 
 {% block content %}
 
-<h1>Events</h1>
+<h1>Beach Tournaments</h1>
 
 
 <table class="table">
@@ -13,21 +13,23 @@
         <tr>
             <th scope="col">Code</th>
             <th scope="col">Name</th>
-            <th scope="col">StartDate</th>
-            <th scope="col">EndDate</th>
+            <th scope="col">StartDateMainDraw</th>
+            <th scope="col">EndDateMainDraw</th>
+            <th scope="col">FederationCode</th>
             <th scope="col">no</th>
             <th scope="col">Version</th>
         </tr>
     </thead>
     <tbody>
-        {% for event in events %}
+        {% for beachtournament in beachtournaments %}
         <tr>
-            <td>{{event.Code}}</td>
-            <td>{{event.Name}}</td>
-            <td>{{event.StartDate}}</td>
-            <td>{{event.EndDate}}</td>
-            <td>{{event.no}}</td>
-            <td>{{event.Version}}</td>
+            <td>{{beachtournament.Code}}</td>
+            <td>{{beachtournament.Name}}</td>
+            <td>{{beachtournament.StartDateMainDraw}}</td>
+            <td>{{beachtournament.EndDateMainDraw}}</td>
+            <td>{{beachtournament.FederationCode}}</td>
+            <td>{{beachtournament.no}}</td>
+            <td>{{beachtournament.Version}}</td>
         {% endfor %}
     </tbody>
   </table>
