@@ -2,6 +2,8 @@ from django.db import models
 
 # Create your models here.
 
+#Hier werden die Datenbanken erstellt
+#Klassen sind die Tabellen
 
 class Event(models.Model):
 

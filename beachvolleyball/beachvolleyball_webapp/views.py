@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Event, BeachTournament
+from .models import Event, BeachTournament, BeachMatch
 
 
 # Create your views here.
@@ -28,3 +28,4 @@ def beachtournaments(request):
         'beachtournaments': beachtournaments,
     }
     return render(request, 'beachtournaments.html', context)
+

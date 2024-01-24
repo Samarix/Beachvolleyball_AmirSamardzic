@@ -35,8 +35,8 @@ if response.status_code == 200:
     # Die XML formatieren (hübsch machen)
     # (ElementTree.tostring() erwartet ein Element, deshalb müssen wir xml_response übergeben)
 
-    rough_string = ElementTree.tostring(xml_response, 'utf-8')
-    reparsed = minidom.parseString(rough_string)
+    raw_string = ElementTree.tostring(xml_response, 'utf-8')
+    reparsed = minidom.parseString(raw_string)
     pretty_xml_str = reparsed.toprettyxml(indent="  ")
     
     # Die formatierte XML in eine Datei schreiben (Eventlist.xml)
